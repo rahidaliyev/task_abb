@@ -1,0 +1,66 @@
+import math
+#ParkingDilemma function sorts the the given array
+#Then calculates the gap between the first and last integer of the given array.
+# after that We use the "for" loop to find the minimum number of gaps
+# In the for loop (i), the space between the current integers is supposedly compared to the integer k steps ahead.The minimum between this number and the MaxSpaces is found.
+#Then MaxSpaces is started with the given n numbers. This is repeated until i + k-1 does not exceed the length of the given arrays. 
+#Lastly, the minimum length required to complete the task is found and returned by the function 
+def ParkingDilemma(cars,k):
+    cars.sort()
+    MaxSpaces=cars[len(cars)-1]-cars[0]+1
+    ret=0
+    for i in n:
+        if i+k-1<len(cars):
+            i+=1
+        v=cars[i+k-1]-cars[i]+1
+        ret=math.min(MaxSpaces,n)
+    return ret
+# entering the amount vehicles
+enter=input(' ')
+n=0
+k=0
+nums=[1,2,3]
+i_nums=iter(nums)
+
+print('Enter the amount of cars in the parking:')
+while next(i_nums):
+    if next(i_nums):
+        n=next(i_nums)
+        if n>=1 and n<math.pow(10,5):
+            break
+        else:
+            print('The wrong number of cars was submitted. Please check and try again ')
+#Entering the number of vehicles to be covered
+print('Enter the number of cars to be covered :')
+# nums=[1,2,3]
+# i_nums=iter(nums)
+while next(i_nums):
+    if next(i_nums):
+        k=next(i_nums)
+        if k>1 and k<n:
+            break
+        else:
+            print('The wrong number of cars was submitted. Please check and try again')
+##entering the location of vehicles
+print('Enter the fields where the cars have been parked:')
+cars=[n]
+for i in n:
+    if i<n:
+        i+=1
+    while next(i_nums):
+        if next(i_nums):
+            cars[i]=next(i_nums)
+            if(cars[i]>=1 and cars[i]<math.pow(10,14)):
+                break
+            else:
+                print('Car parked at wrong location. Please try again')
+#printing results
+print(("The minimum length of a roof needed for the completion of this task:"+ParkingDilemma(cars, k)))
+
+
+
+
+
+
+
+
