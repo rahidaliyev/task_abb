@@ -1,0 +1,105 @@
+import copy
+def floodFill(res, x, y):
+    #"hidden" stop clause - not reinvoking for "c" or "b", only for "a".
+    if res[x][y] == "a":  
+        res[x][y] = "c" 
+        #recursively invoke flood fill on all surrounding cells:
+        if x > 0:
+            floodFill(res,x-1,y)
+        if x < len(res[y]) - 1:
+            floodFill(res,x+1,y)
+        if y > 0:
+            floodFill(res,x,y-1)
+        if y < len(res) - 1:
+            floodFill(res,x,y+1)
+def countryMap(*args):
+      
+    for u in args:
+        print(u)
+res = [ [ 0 for i in range() ] for j in range() ]
+for row in range():
+    if row<len(res):
+        row+=1
+    for col in range():
+        if col<res[0]:
+            replacer
+            while True:
+                replacer=res.get(len(res)-1)+1
+                if res.__contains__(replacer):
+                    res.__add__(replacer)
+                    res.sort
+                    break
+            floodFill(res,row,col,replacer)
+
+res = [ [ 0 for i in range() ] for j in range() ] 
+for row in range():
+    if row<len(res):
+        row+=1
+    for col in range():
+        if col<res[0]:
+            col+=1
+        result=(res[row][col])
+    break
+def floodFillUtil(screen[x][y], int x, int y, int prevC, int newC):
+    
+        
+        ##In here the main task is fulfilled. Orthogonally checking the numbers and changing them to the number
+        #given by the replacer.
+        #This takes a starting position, checks its number then orthogonally continues until there are no more
+        #options it can continue with.
+        #If the current position is no longer suitable, meaning that the new position holds a different number it stops.
+        #If otherwise it initializes the current position with the number given for replacement and then it uses
+        #recursion to check the positions  left, right, up and down.
+        #Looping this causes each country to have a unique number. Which after can bu used in a Set to easily calculate
+        #the overall number of countries on the map.
+       
+    if screen[x][y] is not prevC:
+     return screen[x][y] = newC
+    if x>0:
+        floodFillUtil(screen,x-1,y, prevC, newC)
+    if x<screen.length-1:
+             floodFillUtil(screen,x+1,y, prevC, newC)
+    if y>0:
+             floodFillUtil(screen,x,y-1, prevC, newC)
+    if y<screen[0].length-1:
+             floodFillUtil(screen,x,y+1, prevC, newC)
+    
+N=0
+M=0
+nums=[1,2,3]
+i_nums=iter(nums)
+enter=input('Enter the amount of rows:')
+while next(i_nums):
+    if next(i_nums):
+        N=next(i_nums)
+        if N>=1 and N<300000:
+            break
+        else:
+            print('Invalid amount of rows has been submitted. Please try again')
+#adding the number of columns
+print("Enter the amount of columns: ")
+while next(i_nums):
+    if next(i_nums):
+        M=next(i_nums)
+        if M>=1 and M<300000:
+            break
+        else:
+            print("Invalid amount of columns has been submitted. Please try again")
+#Filling up the map
+
+res = [ [ 0 for i in range(M) ] for j in range(N) ]
+print('Enter the numbers into the map: ')
+for i in N:
+    if i<N:
+        i=+1
+    for j in M:
+        if j<M:
+         while next(i_nums):
+             if next(i_nums):
+                 res[i][j]=next(i_nums)
+                 if N>=-1000000000 and N<1000000000:
+                     break
+                 else:
+                    print("Invalid number has been submitted. Please try again")
+    print("__________________________")
+print("The amount of countries in the given map:"+countryMap(res))
